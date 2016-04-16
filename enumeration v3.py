@@ -27,12 +27,6 @@
 # */
 
 
-# returns the greater value
-def compare(x, y):
-	if(x > y):
-		return x
-	else:
-		return y
 
 
 def maxMiddle(array, start, middle, end):
@@ -65,9 +59,9 @@ def maxSub(array, start, end):
 		return array[start]
 
 	middle = (start + end) / 2
-	result = compare(compare(maxSub(array, start, middle), maxSub(array, middle+1, end)), maxMiddle(array, start, middle, end))
+	result = max(max(maxSub(array, start, middle), maxSub(array, middle+1, end)), maxMiddle(array, start, middle, end))
 
-	print("compare(",start,"-",end,") = ", result )
+	print("max(",start,"-",end,") = ", result )
 
 	return result
 

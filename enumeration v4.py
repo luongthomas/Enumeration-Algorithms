@@ -60,6 +60,8 @@ import string
 def read_file(filename):
     numbers = []
     for l in open(param[1]).readlines():
+    	if (']' in l) == False:
+            continue
         l=l.translate(string.maketrans("", ""), "[] ")
         l=l.replace(" ", "")
         data = l[:-1].split(',')
